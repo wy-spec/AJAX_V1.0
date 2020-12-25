@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .id{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button>send</button>
+    <div class="id"></div>
+    <script>
+        const ids = document.getElementsByTagName('div')[0];
+        ids.onclick=function(){
+            //1.创建Ajax对象
+            const xhr = new XMLHttpRequest();
+            //2.初始化 设置请求方法和url
+            xhr.open('get' , 'http://127.0.0.1:8080/server');
+            //3.send
+            xhr.send();
+            //4.事件绑定 处理服务端返回的结果 readystatechchange 是xhr对象中的属性，表示状态0,1,2,3,4 change 改变
+            xhr.onreadystatechange = ()=>{
+                //判断服务端返回的状态（服务端返回了所有的结果）
+                if (xhr.readyState == 4){
+                    // 状态码 200 404 403 401 500
+                    //判断成功
+                    if (xhr.status >=200 && xhr.status <300){
+                        //处理 行 ，头 ， 空行 ，体
+                        // alert(xhr.response);
+                        console.log(xhr.response)
+                    }else{
+                        //失败
+                        alert('失败')
+                    }
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>

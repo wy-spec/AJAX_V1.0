@@ -1,0 +1,23 @@
+{
+  "name": "AJAX_V1.0",
+  "version": "1.0.0",
+  "description": "AJAX 全称为Asynchronous JavaScript And XML ,就是异步的JS 和 XML，通过Ajax可以在浏览器中向服务器发送异步请求，最大的优势无刷新获取数据，\r Ajax 不是新的编程语言而是一种组合\r ## 请求报文\r ```\r 重点是格式和参数\r 行 POST /s?ie=UTF-8 HTTP/1.1\r 头   Host: ...\r     Cookie: name=guigu\r     Content-Type: ...\r     User-Agent chrome 83\r 空行\r 体  参数...\r ```\r ## 响应报文\r ```\r 行\r         HTTP/1.1 200 OK\r 头      Content-Type: text/html;charset=utf-8\r         Content-length:2048\r         Content-encoding:12\r 空行  \r 体\r     返回的返回体\r     html代码\r ```\r * 404\r * 403\r * 401\r * 500\r * 200",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wy-spec/AJAX_V1.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wy-spec/AJAX_V1.0/issues"
+  },
+  "homepage": "https://github.com/wy-spec/AJAX_V1.0#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
